@@ -13,7 +13,8 @@ while [ true ]; do
 
     # Check if test timed out / the experiment is finished
     if [ "$LATER" -lt `date +%s` ]; then
-       echo "Finished: Experiment time over on $HOSTNAME"
+       echo "Finished: Experiment time over on $HOSTNAME; killing mesher-experimental"
+       killall mesher-experimental
        exit 0
     fi
 

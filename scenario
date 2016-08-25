@@ -242,14 +242,6 @@ fi
 
 ## PHASE 3
 export PHASE=13
-echo -n -e "\e[1;34mPhase 3 - Starting mesher\e[0m"
-echo "`date_ms`, 3, mesher-start" >> $TIMING_FILE
-
-for N in $ALL_NODES; do
-    exec $N "nohup `which mesher-experimental` > $LOCAL_LOG_FOLDER/mesher-$N.log 2>&1 & echo \$! > mesher.pid; sleep 1" &
-    printf "."
-done
-echo 
 
 
 
